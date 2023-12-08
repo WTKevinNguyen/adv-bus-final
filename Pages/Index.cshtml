@@ -1,0 +1,31 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h1>Recipes</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Ingredients</th>
+            <th>Instructions</th>
+            <th>Length</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var recipe in Model.Recipes)
+        {
+            <tr>
+                <td>@recipe.Title</td>
+                <td>@recipe.Description</td>
+                <td>@recipe.Ingrediants</td>
+                <td>@recipe.Instructions</td>
+                <td>@recipe.Length</td>
+            </tr>
+        }
+    </tbody>
+</table>
