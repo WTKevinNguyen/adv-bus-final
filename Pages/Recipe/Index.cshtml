@@ -1,0 +1,39 @@
+@page
+@model adv_bus_final.Pages.Recipe.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Recipes</h1>
+
+@* <div>
+    <form method="get" action="@Url.Action("Index")">
+        <input type="text" name="searchString" placeholder="Search for Recipe">
+        <button type="submit">Search</button>
+    </form>
+</div> *@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Ingredients</th>
+            <th>Instructions</th>
+            <th>Length</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var recipe in Model.Recipes)
+        {
+            <tr>
+                <td>@recipe.Title</td>
+                <td>@recipe.Description</td>
+                <td>@recipe.Ingrediants</td>
+                <td>@recipe.Instructions</td>
+                <td>@recipe.Length</td>
+            </tr>
+        }
+    </tbody>
+</table>

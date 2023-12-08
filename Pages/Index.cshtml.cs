@@ -20,9 +20,9 @@ public class IndexModel : PageModel
             _context = context;
         }
 
-    public void OnGet()
+    public IActionResult OnGet()
     {
-        Recipes = _context.Recipes.ToList();
+        return RedirectToPage("/Recipe/Index");
     }
 }
 
